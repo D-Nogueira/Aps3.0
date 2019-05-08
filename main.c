@@ -7,17 +7,17 @@
 
 int main()
 {
-    /* Adicionando caracteres do português /*/
+    /* Adicionando caracteres do portuguÃªs */
     setlocale(LC_ALL,"Portuguese");
 
-    /* Declaração de variáveis /*/
+    /* DeclaraÃ§Ã£o de variÃ¡veis */
     char nomes[TAM][100], auxiliarNome[100];
     float alturas[TAM],auxiliar,media,acmAlt,somador;
     int i, j,desvio,opcao;
 
-    /* Captação dos dados /*/
+    /* CaptaÃ§Ã£o dos dados */
     for(i = 0 ; i < TAM ; i++){
-        printf("Digite o nome do %iº jogador: ",(i+1));
+        printf("Digite o nome do %i: jogador: ",(i+1));
         gets(nomes[i]);
         system("cls");
     }
@@ -28,7 +28,7 @@ int main()
             acmAlt+=alturas[i];
             somador+=pow(alturas[i],2);
             if(alturas[i] <= 0){
-                printf("ALTURA INVÁVILDA!!!\n");
+                printf("ALTURA INVÃLIDA!!!\n");
                 system("pause");
             }
             system("cls");
@@ -46,21 +46,23 @@ int main()
             }
         }
     }
+    media=acmAlt/TAM;
+    desvio=(somador/TAM)-pow(media,2);
 
-    /* Criação do menu /*/
+    /* CriaÃ§Ã£o do menu */
     do{
     printf("======== CLEVELAND CAVALIERS ========\n");
-    printf("1 – Dados dos jogadores\n");
-    printf("2 – Média de alturas\n");
-    printf("3 – Desvio padrão das alturas\n");
-    printf("4 – Maior e Menor altura\n");
-    printf("5 – Mediana das alturas\n");
-    printf("6 – Finaliza\n");
-    printf("Digite uma opção: ");
+    printf("1 - Dados dos jogadores\n");
+    printf("2 - MÃ©dia de alturas\n");
+    printf("3 - Desvio padrÃ£o das alturas\n");
+    printf("4 - Maior e Menor altura\n");
+    printf("5 - Mediana das alturas\n");
+    printf("6 - Finaliza\n");
+    printf("Digite uma opÃ§Ã£o: ");
     scanf("%i",&opcao);
     switch(opcao)
     {
-        case 1: /* item 1/*/
+        case 1: /* item 1*/
             for(i = 0 ; i < TAM ; i++){
                 printf("\nJOGADOR: %s\n",nomes[i]);
                 printf("ALTURA: %.2fm\n",alturas[i]);
@@ -68,23 +70,22 @@ int main()
             system("pause");
             system("cls");
             break;
-        case 2: /* item 2/*/
-            media=acmAlt/TAM;
-            printf("A média dos jogadores é igual a %.2f metros\n", media);
+        case 2: /* item 2 */
+            printf("A mÃ©dia dos jogadores Ã© igual a %.2f metros\n", media);
             system("pause");
             system("cls");
             break;
-        case 3: /* item 3/*/
-            if(media==0 || media<0){
-                printf("Não é possível calcular o desvio padrão sem a média\n");
+        case 3: /* item 3 */
+                printf("O desvio padrÃ£o Ã© igual a %.2f\n", desvio);
                 system("pause");
                 system("cls");
-            }else{
-                desvio=(somador/TAM)-pow(media,2);
-                printf("O desvio padrão é igual a %.2f\n", desvio);
-                system("pause");
-                system("cls");
-            }
+            break;
+        case 4:// item 4
+
+            break;
+        case 5: // item 5
+            break;
+        case 6: // item 6
             break;
 
     }
