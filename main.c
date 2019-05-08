@@ -89,8 +89,6 @@ int main()
         case 6:
             printf("Finalizando programa!\n");
             system("pause");
-            exit(0);
-
     }
     }while(opcao != 6);
 
