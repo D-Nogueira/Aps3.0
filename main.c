@@ -10,14 +10,15 @@ int main()
     /* Adicionando caracteres do portugu�s /*/
     setlocale(LC_ALL,"Portuguese");
 
-    /* Declara��o de vari�veis /*/
+    /* Declaração de variáveis */
+
     char nomes[TAM][100], auxiliarNome[100];
     float alturas[TAM],auxiliar,media,acmAlt,somador;
     int i, j,desvio,opcao;
 
-    /* Capta��o dos dados /*/
+    /* Captação dos dados */
     for(i = 0 ; i < TAM ; i++){
-        printf("Digite o nome do %i� jogador: ",(i+1));
+        printf("Digite o nome do %i: jogador: ",(i+1));
         gets(nomes[i]);
         system("cls");
     }
@@ -46,7 +47,6 @@ int main()
             }
         }
     }
-
     /* Cria��o do menu /*/
     do{
     printf("======== CLEVELAND CAVALIERS ========\n");
@@ -56,11 +56,11 @@ int main()
     printf("4 � Maior e Menor altura\n");
     printf("5 � Mediana das alturas\n");
     printf("6 � Finaliza\n");
-    printf("Digite uma op��o: ");
+    printf("Digite uma op��o: ");   
     scanf("%i",&opcao);
     switch(opcao)
     {
-        case 1: /* item 1/*/
+        case 1: /* item 1*/
             for(i = 0 ; i < TAM ; i++){
                 printf("\nJOGADOR: %s\n",nomes[i]);
                 printf("ALTURA: %.2fm\n",alturas[i]);
@@ -68,27 +68,33 @@ int main()
             system("pause");
             system("cls");
             break;
-        case 2: /* item 2/*/
+        case 2: /* item 2*/
             media=acmAlt/TAM;
             printf("A m�dia dos jogadores � igual a %.2f metros\n", media);
             system("pause");
             system("cls");
             break;
         case 3: /* item 3/*/
-            if(media==0 || media<0){
-                printf("N�o � poss�vel calcular o desvio padr�o sem a m�dia\n");
-                system("pause");
-                system("cls");
-            }else{
-                desvio=(somador/TAM)-pow(media,2);
-                printf("O desvio padr�o � igual a %.2f\n", desvio);
-                system("pause");
-                system("cls");
+                if(media!=0){
+                    desvio=(somador/TAM)-pow(media,2);
+                    printf("O desvio padr�o � igual a %.2f\n", desvio);
+                    system("pause");
+                    system("cls");
+                }
+                else{
+                    printf("A Média ainda não foi calculada\n");
+                }
             }
+      case 4:
+            break;
+      case 5:
             break;
         case 6:
             printf("Finalizando programa!\n");
             system("pause");
+            break;
+      default:
+            printf("OPÇÃO INVÁLIDA!!!");
     }
     }while(opcao != 6);
 
