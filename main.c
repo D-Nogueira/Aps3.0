@@ -13,8 +13,11 @@ int main()
     /* Declaração de variáveis */
 
     char nomes[TAM][100], auxiliarNome[100];
-    float alturas[TAM],auxiliar,media,acmAlt,somador;
-    int i, j,desvio,opcao;
+    float alturas[TAM],auxiliar,media,acmAlt,somador,desvio;
+    int i, j,opcao;
+    acmAlt = 0;
+    somador = 0;
+    media = 0;
 
     /* Captação dos dados */
     for(i = 0 ; i < TAM ; i++){
